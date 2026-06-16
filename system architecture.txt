@@ -1,0 +1,44 @@
+   Temperature Display and MQTT Monitoring System Architecture
+   
+   
+                    ┌──────────────────────────┐
+                    │      DHT11 Sensor        │
+                    └───────────┬──────────────┘
+                                │
+                                ▼
+                    ┌──────────────────────────┐
+                    │      Arduino UNO         │
+                    │  - Reads temperature     │
+                    │  - Displays on LCD       │
+                    │  - Sends Serial data     │
+                    └───────────┬──────────────┘
+                                │ USB Serial
+                                ▼
+        ┌──────────────────────────────────────────┐
+        │         Python Bridge (PC/VPS)           │
+        │  - Reads Serial from Arduino             │
+        │  - Parses temperature                    │
+        │  - Publishes MQTT message               │
+        └───────────┬──────────────────────────────┘
+                    │ MQTT (TCP 1883)
+                    ▼
+        ┌──────────────────────────────────────────┐
+        │        MQTT Broker (VPS)                 │
+        │        broker.benax.rw                   │
+        │  - Topic: sensors_shoula/dht            │
+        └───────┬───────────────────┬──────────────┘
+                │                   │
+                │                   │
+                ▼                   ▼
+┌────────────────────────┐   ┌────────────────────────────┐
+│   PC Monitor App       │   │   Web Dashboard (Browser)  │
+│   (main.py)           │   │  index.html                │
+│ - Prints temperature   │   │ - MQTT over WebSockets     │
+│ - Real-time logging    │   │ - Live chart (Chart.js)    │
+└────────────────────────┘   └─────────────┬──────────────┘
+                                           │
+                                           ▼
+                              ┌────────────────────────┐
+                              │  User Visualization    │
+                              │  Live Temperature UI   │
+                              └────────────────────────┘

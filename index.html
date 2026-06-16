@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Dashboard</title>
+
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="title-group">
+                <h1>Live Temperature Dashboard</h1>
+                <p class="subtitle">Real-time IoT Telemetry</p>
+            </div>
+            <div id="status" class="status-badge connecting">Connecting</div>
+        </header>
+
+        <main class="dashboard-grid">
+            <section class="card temp-card">
+                <h3>Current Temperature</h3>
+                <div class="temp-display">
+                    <span id="temp">--</span><span class="unit">°C</span>
+                </div>
+                <div class="card-footer">Updates automatically</div>
+            </section>
+
+            <section class="card chart-card">
+                <h3>Temperature History</h3>
+                <div class="chart-wrapper">
+                    <canvas id="chart"></canvas>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/scripts/app.js"></script>
+</body>
+</html>
