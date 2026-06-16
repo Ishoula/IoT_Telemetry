@@ -203,4 +203,4 @@ embedded/
 
 ## Author
 
-IoT Temperature Monitoring Project
+Ishema Shimwa Shoulamite
