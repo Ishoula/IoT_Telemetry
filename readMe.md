@@ -22,9 +22,7 @@ The dashboard shows:
 
 **Live Dashboard**
 
-```text
-[http://157.173.101.159:9233/](http://157.173.101.159:9233/)
-```
+[Temperature Monitoring System](http://157.173.101.159:9233/)
 
 ---
 
@@ -155,9 +153,7 @@ nohup python3 -m http.server 9233 --bind 0.0.0.0 &
 
 Open the dashboard:
 
-```text
-[http://157.173.101.159:9233/](http://157.173.101.159:9233/)
-```
+[Temperature Monitoring System](http://157.173.101.159:9233/)
 
 ### 4. Check MQTT Broker Status
 
