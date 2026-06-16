@@ -23,7 +23,7 @@ The dashboard shows:
 **Live Dashboard**
 
 ```text
-http://YOUR_VPS_IP:9233
+[http://157.173.101.159:9233/](http://157.173.101.159:9233/)
 ```
 
 ---
